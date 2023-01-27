@@ -7,15 +7,16 @@ public class Variable implements Expression {
         this.field = field;
     }
 
-    @Override
+
     public int evaluate(int a) {
         return a;
     }
-    @Override
-    public String toString(){
+
+    public String toString() {
         return field;
     }
-    public boolean equals(Expression a){
+
+    public boolean equals(Expression a) {
         return this.toString().equals(a.toString());
     }
 
