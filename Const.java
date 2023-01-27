@@ -7,15 +7,15 @@ public class Const implements Expression {
         this.field = field;
     }
 
-    public int evaluate(int a) {
+    public int evaluate(int a){
         return field;
     }
 
+    @Override
     public String toString() {
         return Integer.toString(field);
     }
-
-    public boolean equals(Expression a) {
+    public boolean equals(Expression a){
         return this.toString().equals(a.toString());
     }
 
