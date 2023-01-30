@@ -1,25 +1,20 @@
 package expression;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Subtract implements Expression {
-    List<Expression> element = new ArrayList<>();
-
+public class Subtract extends Operation implements Expression {
+    Expression a, b;
 
     public Subtract(Expression a, Expression b) {
-        if (a != null && b != null) {
-            element.add(a);
-            element.add(b);
-        }
+        super(a,b);
     }
 
+    @Override
     public int evaluate(int a) {
-        return element.get(0).evaluate(a) - element.get(1).evaluate(a);
+        return evaluatea(a) - evaluateb(a);
     }
 
+    @Override
     public String toString() {
-        return "(" + element.get(0).toString() + "-" + element.get(1).toString() + ")";
+        return "(" + a.toString() + "-" + b.toString() + ")";
     }
 
     public boolean equals(Expression a) {

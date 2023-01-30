@@ -7,11 +7,12 @@ public class Variable implements Expression {
         this.field = field;
     }
 
-
+    @Override
     public int evaluate(int a) {
         return a;
     }
 
+    @Override
     public String toString() {
         return field;
     }

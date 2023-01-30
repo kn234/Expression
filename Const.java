@@ -7,10 +7,12 @@ public class Const implements Expression {
         this.field = field;
     }
 
+    @Override
     public int evaluate(int a) {
         return field;
     }
 
+    @Override
     public String toString() {
         return Integer.toString(field);
     }
