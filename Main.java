@@ -5,58 +5,67 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(
-                new Add(
-                        new Subtract(
-                                new Multiply(
-                                        new Variable("x"),
-                                        new Variable("x")
-                                ),
-                                new Multiply(
-                                        new Const(3),
-                                        new Variable("x")
+        Multiply a = new Multiply(new Const(3), new Variable("x"));
+        Add b = new Add(new Const(2), new Variable("x"));
+        System.out.println("+".hashCode());
+        System.out.println("*".hashCode());
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
 
-                                )),
-                        new Const(1)
-                )
-        );
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите аргумент");
-        int i = scanner.nextInt();
-        System.out.println(new Add(
-                            new Subtract(
-                                new Multiply(
-                                        new Variable("x"),
-                                        new Variable("x")),
-                                new Multiply(
-                                        new Const(3),
-                                        new Variable("x")
-
-                                )),
-                            new Const(1)
-        ).evaluate(i));
-
-        System.out.println(
-                new Subtract(
-                        new Multiply(
-                                new Const(2),
-                                new Variable("x")
-                        ),
-                        new Const(3)
-                ));
-        System.out.println(new Multiply(
-                new Const(2),
-                new Variable("x"))
-                .equals(new Multiply(
-                        new Const(2),
-                        new Variable("x"))));
-        System.out.println(new Multiply(
-                new Const(2),
-                new Variable("x"))
-                .equals(new Multiply(
-                            new Variable("x"),
-                            new Const(2))));
-
+//        String message= example.toString();
+//        System.out.println(message);
+//        System.out.println(
+//                new Add(
+//                        new Subtract(
+//                                new Multiply(
+//                                        new Variable("x"),
+//                                        new Variable("x")
+//                                ),
+//                                new Multiply(
+//                                        new Const(3),
+//                                        new Variable("x")
+//
+//                                )),
+//                        new Const(1)
+//                )
+//        );
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите аргумент");
+//        int i = scanner.nextInt();
+//        System.out.println(new Add(
+//                            new Subtract(
+//                                new Multiply(
+//                                        new Variable("x"),
+//                                        new Variable("x")),
+//                                new Multiply(
+//                                        new Const(3),
+//                                        new Variable("x")
+//
+//                                )),
+//                            new Const(1)
+//        ).evaluate(i));
+//
+//        System.out.println(
+//                new Subtract(
+//                        new Multiply(
+//                                new Const(2),
+//                                new Variable("x")
+//                        ),
+//                        new Const(3)
+//                ));
+//        System.out.println(new Multiply(
+//                new Variable("x"),
+//                new Variable("x"))
+//                .equals(new Multiply(
+//                        new Variable("x"),
+//                        new Variable("x"))));
+//        System.out.println(new Multiply(
+//                new Const(2),
+//                new Variable("x"))
+//                .equals(new Multiply(
+//                            new Variable("x"),
+//                            new Const(2))));
+//
 
     }
 

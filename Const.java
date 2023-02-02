@@ -1,6 +1,6 @@
 package expression;
 
-public class Const implements Expression {
+public class Const implements Expression, TripleExpression {
     int field;
 
     public Const(int field) {
@@ -16,10 +16,25 @@ public class Const implements Expression {
     public String toString() {
         return Integer.toString(field);
     }
-
-    public boolean equals(Expression a) {
-        return this.toString().equals(a.toString());
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null) {
+            if (this.getClass() == obj.getClass()) {
+                return this.field == ((Const) obj).field;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
+    @Override
+    public int hashCode() {
+        return field;
+    }
 
+    @Override
+    public int evaluate(int x, int y, int z) {
+        return 0;
+    }
 }
