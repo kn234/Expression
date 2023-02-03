@@ -2,15 +2,9 @@ package expression;
 
 public class Add extends Operation implements Expression, TripleExpression {
 
-    public Add(Expression a, Expression b) {
+    public Add(Operation a, Operation b) {
         super(a, b, "+");
     }
-
-    @Override
-    public int evaluate(int x, int y, int z) {
-        return 0;
-    }
-
 
     @Override
     int calc(int a, int b) {

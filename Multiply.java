@@ -2,13 +2,8 @@ package expression;
 
 public class Multiply extends Operation implements Expression, TripleExpression {
 
-    public Multiply(Expression a, Expression b) {
+    public Multiply(Operation a, Operation b) {
         super(a, b, "*");
-    }
-
-    @Override
-    public int evaluate(int x, int y, int z) {
-        return 0;
     }
 
     @Override

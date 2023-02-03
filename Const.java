@@ -1,6 +1,6 @@
 package expression;
 
-public class Const implements Expression, TripleExpression {
+public class Const extends Operation {
     int value;
 
     public Const(int value) {
@@ -8,8 +8,13 @@ public class Const implements Expression, TripleExpression {
     }
 
     @Override
-    public int evaluate(int a) {
+    public int evaluate(int x) {
         return value;
+    }
+
+    @Override
+    int calc(int a, int b) {
+        return 0;
     }
 
     @Override
@@ -36,6 +41,6 @@ public class Const implements Expression, TripleExpression {
 
     @Override
     public int evaluate(int x, int y, int z) {
-        return 0;
+        return value;
     }
 }

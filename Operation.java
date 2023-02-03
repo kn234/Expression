@@ -1,25 +1,35 @@
 package expression;
 
 
-public abstract class Operation implements Expression {
-    Expression a, b;
+public abstract class Operation implements Expression, TripleExpression {
+    Operation a, b;
     String action;
 
 
-    public Operation(Expression a, Expression b, String ac) {
+    public Operation(Operation a, Operation b, String ac) {
         this.a = a;
         this.b = b;
         this.action = ac;
     }
 
-    public int evaluate(int a) {
-        int evalA = this.a.evaluate(a);
-        int evalB = this.b.evaluate(a);
+    public Operation() {
+    }
+
+    public int evaluate(int x) {
+        int evalA = this.a.evaluate(x);
+        int evalB = this.b.evaluate(x);
 
         return calc(evalA, evalB);
     }
 
     abstract int calc(int a, int b);
+
+    public int evaluate(int x, int y, int z) {
+        int evalA = this.a.evaluate(x, y, z);
+        int evalB = this.b.evaluate(x, y, z);
+
+        return calc(evalA, evalB);
+    }
 
     @Override
     public String toString() {
@@ -39,7 +49,6 @@ public abstract class Operation implements Expression {
                     return this.a.equals(((Operation) obj).a) && this.b.equals(((Operation) obj).b);
                 } else {
                     return false;
-
                 }
             }
         }
