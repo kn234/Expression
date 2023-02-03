@@ -1,26 +1,27 @@
 package expression;
 
 public class Const implements Expression, TripleExpression {
-    int field;
+    int value;
 
-    public Const(int field) {
-        this.field = field;
+    public Const(int value) {
+        this.value = value;
     }
 
     @Override
     public int evaluate(int a) {
-        return field;
+        return value;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(field);
+        return Integer.toString(value);
     }
+
     @Override
     public boolean equals(Object obj) {
-        if (obj!=null) {
+        if (obj != null) {
             if (this.getClass() == obj.getClass()) {
-                return this.field == ((Const) obj).field;
+                return this.value == ((Const) obj).value;
             } else {
                 return false;
             }
@@ -30,7 +31,7 @@ public class Const implements Expression, TripleExpression {
 
     @Override
     public int hashCode() {
-        return field;
+        return value;
     }
 
     @Override

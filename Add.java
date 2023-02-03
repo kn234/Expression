@@ -1,11 +1,9 @@
 package expression;
 
-import java.util.Map;
-
 public class Add extends Operation implements Expression, TripleExpression {
 
     public Add(Expression a, Expression b) {
-        super(a, b,"+");
+        super(a, b, "+");
     }
 
     @Override
@@ -14,4 +12,8 @@ public class Add extends Operation implements Expression, TripleExpression {
     }
 
 
+    @Override
+    int calc(int a, int b) {
+        return a + b;
+    }
 }

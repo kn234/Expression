@@ -12,41 +12,14 @@ public abstract class Operation implements Expression {
         this.action = ac;
     }
 
-    public int evaluatea(int a) {
-        return this.a.evaluate(a);
-    }
-
-    public int evaluateb(int a) {
-        return b.evaluate(a);
-    }
-
-    public int add(int a) {
-        return evaluatea(a) + evaluateb(a);
-    }
-
-    public int subtract(int a) {
-        return evaluatea(a) - evaluateb(a);
-    }
-
-    public int multiply(int a) {
-        return evaluatea(a) * evaluateb(a);
-    }
-
-    public int divide(int a) {
-        return evaluatea(a) / evaluateb(a);
-    }
-
     public int evaluate(int a) {
-        if (action.equals("+")) {
-            return add(a);
-        } else if (action.equals("-")) {
-            return subtract(a);
-        } else if (action.equals("*")) {
-            return multiply(a);
-        } else {
-            return divide(a);
-        }
+        int evalA = this.a.evaluate(a);
+        int evalB = this.b.evaluate(a);
+
+        return calc(evalA, evalB);
     }
+
+    abstract int calc(int a, int b);
 
     @Override
     public String toString() {
@@ -55,13 +28,13 @@ public abstract class Operation implements Expression {
 
     @Override
     public int hashCode() {
-        return action.hashCode()+a.hashCode()*13+b.hashCode()*111;
+        return action.hashCode() + a.hashCode() * 13 + b.hashCode() * 111;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj!=null){
-            if (this.getClass()==obj.getClass()){
+        if (obj != null) {
+            if (this.getClass() == obj.getClass()) {
                 if (action.equals(((Operation) obj).action)) {
                     return this.a.equals(((Operation) obj).a) && this.b.equals(((Operation) obj).b);
                 } else {

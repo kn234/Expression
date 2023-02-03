@@ -1,45 +1,34 @@
 package expression;
 
-import java.util.*;
-
 public class Variable implements Expression, TripleExpression {
-    String vrName;
+    String varName;
 
-    Map<String, Integer> vr = new HashMap<>();
+    public Variable(String varName) {
 
-    public Variable(String vrName) {
-        if (!vr.containsKey(vrName)) {
-            vr.put(vrName, 0);
-
-        }
-        this.vrName = vrName;
+        this.varName = varName;
     }
-//    public Variable(String field) {
-//        this.field = field;
-//    }
 
     @Override
     public int evaluate(int a) {
-        vr.put(vrName, a);
-        return vr.get(vrName);
+        return a;
     }
 
     @Override
     public String toString() {
-        return vrName;
+        return varName;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj!=null){
+        if (obj != null) {
             return this.getClass() == obj.getClass();
         }
         return false;
-        }
+    }
 
     @Override
     public int hashCode() {
-        return vrName.hashCode();
+        return varName.hashCode();
     }
 
     @Override
