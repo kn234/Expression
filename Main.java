@@ -1,16 +1,9 @@
 package expression;
 
-
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Multiply a = new Multiply(new Const(3), new Variable("x"));
-        Add b = new Add(new Const(2), new Variable("x"));
-        System.out.println("+".hashCode());
-        System.out.println("*".hashCode());
-        System.out.println(a.hashCode());
-        System.out.println(b.hashCode());
+        Operation a = new Add(new Variable("x"),new Const(2));
+        System.out.println(a.evaluate(-10,-10,-10));
 
 //        String message= example.toString();
 //        System.out.println(message);

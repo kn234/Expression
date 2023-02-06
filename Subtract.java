@@ -1,7 +1,7 @@
 package expression;
 
 public class Subtract extends Operation {
-    public Subtract(Operation a, Operation b) {
+    public Subtract(Expressions a, Expressions b) {
         super(a, b, "-");
     }
 

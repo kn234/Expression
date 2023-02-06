@@ -1,6 +1,6 @@
 package expression;
 
-public class Const extends Operation {
+public class Const implements Expressions {
     int value;
 
     public Const(int value) {
@@ -10,11 +10,6 @@ public class Const extends Operation {
     @Override
     public int evaluate(int x) {
         return value;
-    }
-
-    @Override
-    int calc(int a, int b) {
-        return 0;
     }
 
     @Override

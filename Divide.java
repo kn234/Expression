@@ -2,10 +2,10 @@ package expression;
 
 import expression.common.Op;
 
-public class Divide extends Operation implements Expression, TripleExpression {
+public class Divide extends Operation {
 
 
-    public Divide(Operation a, Operation b) {
+    public Divide(Expressions a, Expressions b) {
         super(a, b, "/");
     }
 

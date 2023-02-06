@@ -1,12 +1,12 @@
 package expression;
 
 
-public abstract class Operation implements Expression, TripleExpression {
-    Operation a, b;
+public abstract class Operation implements Expressions {
+    Expressions a, b;
     String action;
 
 
-    public Operation(Operation a, Operation b, String ac) {
+    public Operation(Expressions a, Expressions b, String ac) {
         this.a = a;
         this.b = b;
         this.action = ac;

@@ -1,8 +1,8 @@
 package expression;
 
-public class Multiply extends Operation implements Expression, TripleExpression {
+public class Multiply extends Operation {
 
-    public Multiply(Operation a, Operation b) {
+    public Multiply(Expressions a, Expressions b) {
         super(a, b, "*");
     }
 

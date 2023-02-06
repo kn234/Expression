@@ -1,6 +1,6 @@
 package expression;
 
-public class Variable extends Operation {
+public class Variable implements Expressions {
     String varName;
 
     public Variable(String varName) {
@@ -21,10 +21,6 @@ public class Variable extends Operation {
         } else {
             return z;
         }
-    }
-    @Override
-    int calc(int a, int b) {
-        return 0;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package expression;
 
-public class Add extends Operation implements Expression, TripleExpression {
+public class Add extends Operation {
 
-    public Add(Operation a, Operation b) {
+    public Add(Expressions a, Expressions b) {
         super(a, b, "+");
     }
 
